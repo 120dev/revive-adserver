@@ -1,0 +1,44 @@
+version: '3.7'
+networks:
+  revive_adserver:
+    driver: bridge
+
+volumes:
+  vol_revive_adserver_db:
+    driver: local
+
+services:
+
+  revive_adserver:
+    restart: always
+    image: 120dev/php8-laravel10:latest
+    container_name: revive_adserver
+    privileged: true
+    networks:
+      - revive_adserver
+    volumes:
+      - ./revive-adserver-5.4.1:/var/www/html/:cached
+    environment:
+      - TZ=Pacific/Noumea
+    depends_on:
+      - revive_adserver_db
+    links:
+      - revive_adserver_db
+    ports:
+      - '8888:80'
+
+  revive_adserver_db:
+    image: mysql:5.7
+    container_name: revive_adserver_db
+    restart: always
+    environment:
+      MYSQL_ROOT_HOST: "${MYSQL_ROOT_HOST}"
+      MYSQL_ROOT_PASSWORD: "${MYSQL_ROOT_PASSWORD}"
+      MYSQL_DATABASE: "${MYSQL_DATABASE}"
+      MYSQL_USER: "${MYSQL_USER}"
+      MYSQL_PASSWORD: "${MYSQL_PASSWORD}"
+    volumes:
+      - vol_revive_adserver_db:/var/lib/mysql
+    command: --default-authentication-plugin=mysql_native_password
+    networks:
+      - revive_adserver
