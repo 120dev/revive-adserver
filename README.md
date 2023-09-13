@@ -1,14 +1,13 @@
 # Installation
+prerequisites: docker and docker-compose
+- clone project : ``git clone https://github.com/120dev/revive-adserver``
+- extract in same folder : ``tar xf revive-adserver-5.4.1.tar``
+- adjust .env file
+- create container with : ``docker-compose up -d``
+  
+- go on http://127.0.0.1:8888
+- During installation the mysql server host will be: `revive_adserver_db`
 
-- pull project : ``git clone https://github.com/120dev/revive-adserver``
-- ``tar xf revive-adserver-5.4.1.tar``
-- create .env
-  - MYSQL_ROOT_HOST=%
-  - MYSQL_ROOT_PASSWORD=revive_adserver
-  - MYSQL_DATABASE=revive_adserver
-  - MYSQL_USER=revive_adserver
-  - MYSQL_PASSWORD=revive_adserver
-- lunch container with : ``docker-compose up -d``
 
 # Revive Adserver 5.4.1
 #### The world's most popular free, open source ad serving system
@@ -22,27 +21,6 @@
 * Track and report on campaign success, including click-through rates;
 
 * Set rules to target the delivery of campaigns, or even ads, to specific users, to help maximise the effectiveness of campaigns.
-
-
-
-# Download
-
-**DO NOT DOWNLOAD AS A ZIP FILE FROM GITHUB**
-
-Download the latest version from: https://www.revive-adserver.com/download/
-
-Revive Adserver as available from github as a zip file is not suitable for installation on a server. It contains a number of files that are for development only, and are removed during the release packaging process.
-
-Please ONLY download Revive Adserver as a release package from the Revive Adserver website at https://www.revive-adserver.com/.
-
-
-
-# Hosted edition
-
-If you'd like to use the Revive Adserver software without having to download, install, configure, and maintain it yourself, there is also a Hosted edition.
-
-You can find out more about the Hosted edition, and subscribe at https://www.revive-adserver.net/.
-
 
 
 # License
