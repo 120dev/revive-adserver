@@ -1,6 +1,6 @@
 # Installation
 
-- pull project : ``git pull https://github.com/120dev/revive-adserver``
+- pull project : ``git clone https://github.com/120dev/revive-adserver``
 - ``tar xf revive-adserver-5.4.1.tar``
 - create .env
   - MYSQL_ROOT_HOST=%
