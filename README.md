@@ -3,7 +3,7 @@ prerequisites: docker and docker-compose
 - clone project : ``git clone https://github.com/120dev/revive-adserver``
 - extract in same folder : ``tar xf revive-adserver-5.4.1.tar``
 - adjust .env file
-- create container with : ``docker-compose up -d``
+- create containers with : ``docker-compose up -d``
   
 - go on http://127.0.0.1:8888
 - During installation the mysql server host will be: `revive_adserver_db`
